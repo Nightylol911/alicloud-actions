@@ -16,6 +16,6 @@ jobs:
               SSH_USER: ${{secrets.SSH_USER}}
               SSH_HOST: ${{secrets.SSH_HOST}}
             run: |
-              echo "$SSH_KEY" > myKey1.pem
-              chmod 600 myKey1.pem
-              ssh -i myKey1.pem $SSH_USER@$SSH_HOST "cd cd docker-compose-flask-app && git pull https://github.com/faialotaibi/docker-compose-flask-app.git && docker compose up -d --build"
+              echo "$SSH_KEY" > myKey2.pem
+              chmod 600 myKey2.pem
+              ssh -i myKey2.pem $SSH_USER@$SSH_HOST "cd cd docker-compose-flask-app && git pull https://github.com/faialotaibi/docker-compose-flask-app.git && docker compose up -d --build"
