@@ -1,5 +1,3 @@
-myKey.pem
-myKey1.pem
 variables.tf
 .terraform
 .terraform.lock.hcl
@@ -7,3 +5,4 @@ root@8.213.39.165
 root@8.213.44.195
 terraform.tfstate
 terraform.tfstate.backup
+myKey2.pem

@@ -12,7 +12,7 @@ resource "alicloud_instance" "instance" {
   vswitch_id                 = alicloud_vswitch.private.id
   internet_max_bandwidth_out = 0
   instance_charge_type       = "PostPaid"
-  key_name                   = alicloud_ecs_key_pair.myKey1.key_pair_name
+  key_name                   = alicloud_ecs_key_pair.myKey2.key_pair_name
   
   user_data = base64encode(templatefile("http-setup.tpl", {redis_host = alicloud_instance.redis.private_ip}))
 }

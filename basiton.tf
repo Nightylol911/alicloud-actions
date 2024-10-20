@@ -12,7 +12,7 @@ resource "alicloud_instance" "basiton" {
   internet_max_bandwidth_out = 100
   internet_charge_type       = "PayByTraffic"
   instance_charge_type       = "PostPaid"
-  key_name                   = alicloud_ecs_key_pair.myKey1.key_pair_name
+  key_name                   = alicloud_ecs_key_pair.myKey2.key_pair_name
 }
 
 output "bastion_server_public_ip"{

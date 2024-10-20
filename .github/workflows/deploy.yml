@@ -1,0 +1,21 @@
+name: deploying
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: self-hosted
+        
+        steps:
+          - name: Deploying to server 2
+            env:
+              SSH_KEY: ${{secrets.SSH_KEY}}
+              SSH_USER: ${{secrets.SSH_USER}}
+              SSH_HOST: ${{secrets.SSH_HOST}}
+            run: |
+              echo "$SSH_KEY" > myKey1.pem
+              chmod 600 myKey1.pem
+              ssh -i myKey1.pem $SSH_USER@$SSH_HOST "cd cd docker-compose-flask-app && git pull https://github.com/faialotaibi/docker-compose-flask-app.git && docker compose up -d --build"
